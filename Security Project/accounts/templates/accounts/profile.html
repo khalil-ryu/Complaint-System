@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+   
+  </style>
+    
+    <h1>{{ user.username }}'s Profile</h1>
+    <p>Name: {{ user.username }} {{ user.last_name }}</p>
+    <p>Phone Number: {{ profile.phone_number }}</p>
+    <p>Job Position: {{ profile.get_job_position_display }}</p>
+    <p>Grade: {{ profile.get_grade_display }}</p>
+    <!-- Add a link to edit the profile, if you have a view for it -->
+    
+{% endblock %}

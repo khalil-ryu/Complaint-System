@@ -1,0 +1,17 @@
+<!-- templates/home.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <h1>Welcome to Our Complaints App!</h1>
+    <p>
+        This is a platform where users can submit and view complaints. Our app provides a secure way to handle complaints
+        with encrypted titles and descriptions. Users can register, submit complaints, and view a list of complaints based
+        on their roles.
+    </p>
+    <p>
+        Get started by <a href="{% url 'signup' %}">signing up</a> or <a href="{% url 'login' %}">logging in</a>.
+    </p>
+{% endblock %}

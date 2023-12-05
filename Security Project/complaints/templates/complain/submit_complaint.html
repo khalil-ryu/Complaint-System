@@ -1,0 +1,87 @@
+<!-- complaints/submit_complaint.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    /* static/css/styles.css */
+
+/* Add these styles for the complaint form */
+/* static/css/styles.css */
+
+/* Add these styles for the complaint form */
+/* static/css/styles.css */
+
+/* Add these styles for the complaint form */
+/* static/css/styles.css */
+
+/* Add these styles for the complaint form */
+.complaint-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.complaint-form h2 {
+    color: #3498db;
+    text-align: center;
+}
+
+.complaint-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.complaint-form label {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.complaint-form input,
+.complaint-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Arrange title and description input fields side by side */
+.complaint-form .form-row {
+    display: flex;
+    gap: 15px;
+}
+
+/* Style the submit button */
+.complaint-form button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.complaint-form button:hover {
+    background-color: #217db5;
+}
+
+
+
+
+</style>
+
+    <div class="container complaint-form">
+        <h2>Submit a Complaint</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Submit Complaint</button>
+        </form>
+    </div>
+{% endblock %}
+

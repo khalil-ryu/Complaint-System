@@ -1,0 +1,61 @@
+
+{% extends 'base.html' %}
+<style>
+/* static/css/styles.css */
+
+/* static/css/styles.css */
+
+/* static/css/styles.css */
+
+.complaint-list {
+    list-style: none;
+    padding: 0;
+}
+
+.complaint-list li {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+    color: #333; /* Default text color */
+}
+
+.complaint-list li + li {
+    margin-top: 20px; /* Add margin-top to all li elements except the first one */
+}
+
+.complaint-list li strong {
+    font-weight: bold;
+    color: #3498db; /* Title color */
+}
+
+.complaint-list li span {
+    color: #555; /* Description color */
+}
+
+.complaint-list li em {
+    font-style: italic;
+    color: #e74c3c; /* Author color */
+}
+
+.complaint-list li time {
+    color: #27ae60; /* Date color */
+}
+
+
+</style>
+{% block content %}
+    <h2>My Complaints</h2>
+    <ul class="complaint-list">
+        {% for complaint in complaints %}
+            <li style="margin-top: 50px;">
+                <strong style="color: #3498db;">Title:</strong> {{ complaint.get_decrypted_title }}<br>
+                <span style="color: #3498db;">Description:</span> {{ complaint.get_decrypted_description }}<br>
+                <time style="color: #27ae60;">Author:</time> {{ complaint.user }}<br>
+                <time style="color: #27ae60;">Date:</time> {{ complaint.created_at }}<br>
+            </li>
+
+        {% empty %}
+            <li>No complaints submitted.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
